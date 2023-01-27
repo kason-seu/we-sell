@@ -1,0 +1,1 @@
+<view class="commodity-list"> 商品列表 <commodity u-i="187c7192-0" bind:__l="__l"></commodity></view>

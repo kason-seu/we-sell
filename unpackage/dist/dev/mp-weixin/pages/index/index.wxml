@@ -1,0 +1,1 @@
+<view class="index"><index-swiper u-i="7166fe81-0" bind:__l="__l"></index-swiper><recommend u-i="7166fe81-1" bind:__l="__l"></recommend><card wx:if="{{a}}" u-i="7166fe81-2" bind:__l="__l" u-p="{{a}}"></card><commodity-list u-i="7166fe81-3" bind:__l="__l"></commodity-list></view>

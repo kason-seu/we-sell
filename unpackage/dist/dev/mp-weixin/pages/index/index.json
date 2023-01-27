@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "小微商铺",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "index-swiper": "../../components/index/IndexSwiper",
+    "recommend": "../../components/index/Recommend",
+    "card": "../../components/common/Card",
+    "commodity-list": "../../components/common/CommodityList"
+  }
+}
