@@ -38,6 +38,7 @@
 <style scoped>
 	.recommend {
 		padding: 10rpx;
+
 	}
 
 	.recommend-item {

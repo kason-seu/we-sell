@@ -60,10 +60,10 @@
 		line-height: 150rpx;
 	}
 
-	.content {
+	/* .content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	}
+	} */
 </style>

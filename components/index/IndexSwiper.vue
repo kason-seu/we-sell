@@ -10,13 +10,13 @@
 			</swiper-item>
 			<swiper-item>
 				<view class="swiper-item">
-					<image src="@/static/swiper/swiper2.png"></image>
+					<image src="@/static/swiper/swiper2.png" class="swiper-img"></image>
 
 				</view>
 			</swiper-item>
 			<swiper-item>
 				<view class="swiper-item">
-					<image src="@/static/swiper/swiper3.png"></image>
+					<image src="@/static/swiper/swiper3.png" class="swiper-img"></image>
 
 				</view>
 			</swiper-item>
@@ -28,13 +28,22 @@
 </script>
 
 <style scoped>
-	.swiper {
+	swiper {
 		width: 100%;
 		height: 400rpx;
 	}
 
+	/* .swiper {
+		width: 100%;
+		height: 400rpx;
+	} */
+
 	.swiper-item {
 		width: 100%;
 		height: 400rpx;
+	}
+
+	.swiper-img {
+		width: 100%;
 	}
 </style>
