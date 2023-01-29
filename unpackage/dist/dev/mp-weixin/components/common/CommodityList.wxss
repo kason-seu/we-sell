@@ -5,7 +5,7 @@
 }
 .commodity-item.data-v-5ac280a4 {
 	padding-bottom: 20rpx;
-	width: 375rpx;
+	width: 50%;
 }
 .item-img.data-v-5ac280a4 {
 	width: 100%;

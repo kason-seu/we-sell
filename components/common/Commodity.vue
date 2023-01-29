@@ -96,7 +96,7 @@
 
 	.commodity-item {
 		padding-bottom: 20rpx;
-		width: 375rpx;
+		width: 50%;
 	}
 
 	.item-img {
