@@ -1,6 +1,7 @@
 {
-  "component": true,
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
   "usingComponents": {
-    "commodity": "./Commodity"
+    "commodity": "/components/common/Commodity"
   }
 }

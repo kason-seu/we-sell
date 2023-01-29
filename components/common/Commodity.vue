@@ -1,6 +1,22 @@
 <template>
 	<view class="commodity">
 
+
+		<view class="commodity-item" v-for="(item,index) in commodityList" :key="index">
+
+			<image class="item-img" v-if="item.imgUrl" :src="item.imgUrl" mode=""></image>
+			<view class="commodity-content">
+				<text style="font-size: 10rpx;">{{item.imgUrl}}</text>
+				<text class="commodity-name">{{item.commodity_name}}</text>
+				<view class="">
+					<text class="current-price">${{item.current_price}}</text>
+					<text class="origin-price">${{item.origin_price}}</text>
+				</view>
+				<text class="discount">{{item.discount}}折</text>
+			</view>
+		</view>
+
+
 		<view class="commodity-item">
 
 			<image class="item-img" src="../../static/commodity/item1.jpg" mode=""></image>
@@ -26,11 +42,41 @@
 				<text class="discount">5折</text>
 			</view>
 		</view>
+
+
+		<view class="commodity-item">
+			<image class="item-img" src="../../static/commodity/item3.jpg" mode=""></image>
+			<view class="commodity-content">
+				<text class="commodity-name">大鹅绒毛新疆特产羊毛，2023年爆款热卖，限时7天售</text>
+				<view class="">
+					<text class="current-price">$299</text>
+					<text class="origin-price">$200</text>
+				</view>
+				<text class="discount">5折</text>
+			</view>
+		</view>
+
+
+		<view class="commodity-item">
+			<image class="item-img" src="../../static/commodity/item4.jpg" mode=""></image>
+			<view class="commodity-content">
+				<text class="commodity-name">大鹅绒毛新疆特产羊毛，2023年爆款热卖，限时7天售</text>
+				<view class="">
+					<text class="current-price">$299</text>
+					<text class="origin-price">$200</text>
+				</view>
+				<text class="discount">5折</text>
+			</view>
+		</view>
+
 	</view>
 </template>
 
 <script>
 	export default {
+		props: {
+			commodityList: Array
+		},
 		data() {
 			return {
 

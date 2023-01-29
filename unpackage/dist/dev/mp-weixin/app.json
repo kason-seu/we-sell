@@ -7,6 +7,7 @@
     "components/common/CommodityList",
     "components/common/Commodity"
   ],
+  "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "首页",
@@ -17,6 +18,8 @@
     "color": "#636263",
     "selectedColor": "#636263",
     "borderStyle": "black",
+    "fontSize": "14px",
+    "spacing": "5px",
     "list": [
       {
         "pagePath": "pages/index/index",
