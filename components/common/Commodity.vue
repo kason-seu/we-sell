@@ -2,11 +2,12 @@
 	<view class="commodity">
 
 
-		<view class="commodity-item" v-for="(item,index) in commodityList" :key="index">
+		<view class="commodity-item" v-for="(item,index) in dataList" :key="index" :style='"width:"+itemW+";"'>
 
-			<image class="item-img" v-if="item.imgUrl" :src="item.imgUrl" mode=""></image>
+			<image class="item-img" v-if="item.imgUrl" :src="item.imgUrl" mode="" :style='"height:"+itemImgH+";"'>
+			</image>
 			<view class="commodity-content">
-				<text style="font-size: 10rpx;">{{item.imgUrl}}</text>
+
 				<text class="commodity-name">{{item.commodity_name}}</text>
 				<view class="">
 					<text class="current-price">${{item.current_price}}</text>
@@ -17,7 +18,9 @@
 		</view>
 
 
-		<view class="commodity-item">
+		<!-- 下面这些事固定写死而不是传参的-->
+
+		<!-- <view class="commodity-item">
 
 			<image class="item-img" src="../../static/commodity/item1.jpg" mode=""></image>
 			<view class="commodity-content">
@@ -68,14 +71,22 @@
 				<text class="discount">5折</text>
 			</view>
 		</view>
-
+ -->
 	</view>
 </template>
 
 <script>
 	export default {
 		props: {
-			commodityList: Array
+			dataList: Array,
+			itemW: {
+				type: String,
+				default: "375rpx"
+			},
+			itemImgH: {
+				type: String,
+				default: "375rpx"
+			}
 		},
 		data() {
 			return {
@@ -96,12 +107,12 @@
 
 	.commodity-item {
 		padding-bottom: 20rpx;
-		width: 50%;
+		/* width: 375rpx; */
 	}
 
 	.item-img {
 		width: 100%;
-		height: 375rpx;
+		/* height: 375rpx; */
 	}
 
 	.commodity-content {
