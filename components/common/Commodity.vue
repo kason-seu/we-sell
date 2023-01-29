@@ -1,5 +1,5 @@
 <template>
-	<view class="commodity">
+	<view class="commodity" :style="'flex-wrap: '+wrap+';'">
 
 
 		<view class="commodity-item" v-for="(item,index) in dataList" :key="index" :style='"width:"+itemW+";"'>
@@ -86,6 +86,10 @@
 			itemImgH: {
 				type: String,
 				default: "375rpx"
+			},
+			wrap: {
+				type: String,
+				default: "wrap"
 			}
 		},
 		data() {
@@ -102,7 +106,7 @@
 <style scoped>
 	.commodity {
 		display: flex;
-		flex-wrap: wrap;
+		/* flex-wrap: wrap; */
 	}
 
 	.commodity-item {

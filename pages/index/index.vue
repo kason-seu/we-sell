@@ -23,6 +23,8 @@
 		<Icons></Icons>
 		<Card cardTitle="热销品牌"></Card>
 		<Brand></Brand>
+		<Card cardTitle="推荐商户"></Card>
+		<Shop></Shop>
 		<Card cardTitle="热销爆品"></Card>
 		<Hot></Hot>
 		<Card cardTitle="猜你喜欢"></Card>
@@ -40,6 +42,7 @@
 	import Icons from '@/components/index/Icons.vue'
 	import Hot from '@/components/index/Hot.vue'
 	import Brand from '@/components/index/Brand.vue'
+	import Shop from '../../components/index/Shop.vue'
 	export default {
 		data() {
 			return {
@@ -54,7 +57,8 @@
 			Banner,
 			Icons,
 			Hot,
-			Brand
+			Brand,
+			Shop
 		},
 		onLoad() {
 
