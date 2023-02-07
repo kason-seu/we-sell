@@ -2,13 +2,18 @@
   "navigationBarTitleText": "小微商铺",
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "backgroundTextStyle": "dark",
   "navigationStyle": "custom",
   "usingComponents": {
     "index-swiper": "/components/index/IndexSwiper",
     "recommend": "/components/index/Recommend",
     "card": "/components/common/Card",
-    "commodity-list": "/components/common/CommodityList"
+    "commodity-list": "/components/common/CommodityList",
+    "banner": "/components/index/Banner",
+    "icons": "/components/index/Icons",
+    "hot": "/components/index/Hot",
+    "brand": "/components/index/Brand",
+    "shop": "/components/index/Shop"
   }
 }

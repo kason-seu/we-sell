@@ -5,7 +5,8 @@
     "pages/shopcart/shopcart",
     "pages/my/my",
     "components/common/CommodityList",
-    "components/common/Commodity"
+    "components/common/Commodity",
+    "components/index/Shop"
   ],
   "subPackages": [],
   "window": {

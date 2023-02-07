@@ -1,1 +1,1 @@
-<view class="index"><index-swiper vue-id="8dd740cc-1" bind:__l="__l"></index-swiper><recommend vue-id="8dd740cc-2" bind:__l="__l"></recommend><card vue-id="8dd740cc-3" cardTitle="猜你喜欢" bind:__l="__l"></card><commodity-list vue-id="8dd740cc-4" bind:__l="__l"></commodity-list></view>
+<view class="index"><scroll-view class="scroll-home" scroll-x="true"><block wx:for="{{tabBarItemList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="scroll-item"><text class="item-text">{{item.name}}</text></view></block></scroll-view></view>

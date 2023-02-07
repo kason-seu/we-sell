@@ -1,0 +1,13 @@
+
+.brand.data-v-07b06e02 {
+	display: flex;
+	flex-wrap: wrap;
+}
+.brand-img.data-v-07b06e02 {
+	flex: 25%;
+	box-sizing: border-box;
+	width: 25%;
+	height: 185rpx;
+	padding: 2rpx;
+}
+
