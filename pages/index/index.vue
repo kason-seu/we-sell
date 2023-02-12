@@ -49,9 +49,9 @@
 			</scroll-view>
 		</view>
 		<swiper @change="changeTab" :current="tabBarIndex" :style="'height:'+ homeHeight +'px;'">
-			<swiper-item v-for="(item,index) in tabBarItemList" :key="index">
+			<swiper-item v-for="(item,index) in newTabPageList" :key="index">
 				<view class="home-data">
-					<Banner></Banner>
+					<!-- <Banner></Banner>
 					<Icons></Icons>
 					<Card cardTitle="热销品牌"></Card>
 					<Brand></Brand>
@@ -60,7 +60,20 @@
 					<Card cardTitle="热销爆品"></Card>
 					<Hot></Hot>
 					<Card cardTitle="猜你喜欢"></Card>
-					<CommodityList></CommodityList>
+					<CommodityList></CommodityList> -->
+
+					<!-- 這東西是個空白沒有啥作用，不是試圖 -->
+
+					<block v-for="(key,i) in item.data" :key="i">
+
+						<IndexSwiper v-if="key.type === 'swiperList'" :dataList="key.data"></IndexSwiper>
+						<template v-if="key.type === 'recommendList'">
+							<Recommend :dataList="key.data"></Recommend>
+							<Card cardTitle="猜你喜欢"></Card>
+						</template>
+
+						<CommodityList v-if="key.type === 'commodityList'" :dataList="key.data"></CommodityList>
+					</block>
 				</view>
 			</swiper-item>
 
@@ -89,34 +102,38 @@
 				tabScrollIndex: 'tap0',
 				// home视图高度，显示真正的内容板块
 				homeHeight: 0,
-				top: 0,
-				tabBarItemList: [{
-						name: "推荐"
-					}, {
-						name: "运动户外"
-					},
-					{
-						name: "衣状美食"
-					},
-					{
-						name: "户外生活"
-					},
-					{
-						name: "品牌专卖"
-					},
-					{
-						name: "瑜伽专卖"
-					},
-					{
-						name: "家电服务"
-					},
-					{
-						name: "家装服务"
-					},
-					{
-						name: "美食专卖"
-					}
-				]
+
+				// 改造从接口中读取， tabBar显示的菜单内容
+				tabBarItemList: [],
+				// 存储每个页面对应的一些组件内容，有几个tabBar，这里存几个数组
+				newTabPageList: []
+				// tabBarItemList: [{
+				// 		name: "推荐"
+				// 	}, {
+				// 		name: "运动户外"
+				// 	},
+				// 	{
+				// 		name: "衣状美食"
+				// 	},
+				// 	{
+				// 		name: "户外生活"
+				// 	},
+				// 	{
+				// 		name: "品牌专卖"
+				// 	},
+				// 	{
+				// 		name: "瑜伽专卖"
+				// 	},
+				// 	{
+				// 		name: "家电服务"
+				// 	},
+				// 	{
+				// 		name: "家装服务"
+				// 	},
+				// 	{
+				// 		name: "美食专卖"
+				// 	}
+				// ]
 			}
 		},
 		components: {
@@ -130,19 +147,49 @@
 			Brand,
 			Shop
 		},
+
 		onLoad() {
 
+			this.__init()
 
 		},
+
 		onReady() {
 			let view = uni.createSelectorQuery().select('.home-data')
 			view.boundingClientRect(data => {
 				console.log('页面布局信息 ' + JSON.stringify(data))
-				this.homeHeight = data.height
+				//this.homeHeight = data.height
+				this.homeHeight = 5000;
 			}).exec()
 		},
 		methods: {
+			__init() {
+				uni.request({
+					url: "http://192.168.0.110:3000/api/index_list/data",
+					success: (res) => {
+						//console.log('tabBar ' + JSON.stringify(res.data.data.tabBar))
+						this.tabBarItemList = res.data.data.tabBar
+						//console.log(JSON.stringify(res.data.data))
+						this.newTabPageList = this.initNewTabPageList(res.data.data)
+						//console.log('newresult ' + JSON.stringify(this.newTabPageList))
+					}
+				})
 
+			},
+			initNewTabPageList(res) {
+
+				let arr = []
+				for (let i = 0; i < this.tabBarItemList.length; i++) {
+					let obj = {
+						data: []
+					}
+					if (i == 0) {
+						obj.data = res.data
+					}
+					arr.push(obj)
+				}
+				return arr
+			},
 			tapClick(index) {
 				if (this.tabBarIndex === index) {
 					return

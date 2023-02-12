@@ -24,6 +24,9 @@
 
 <script>
 	export default {
+		props: {
+			dataList: Array
+		},
 		data() {
 			return {
 

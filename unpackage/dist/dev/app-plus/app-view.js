@@ -349,18 +349,37 @@ var render = function () {
                   attrs: { _i: "9-" + $31 },
                 },
                 [
-                  _c("Banner", { attrs: { _i: "10-" + $31 } }),
-                  _c("Icons", { attrs: { _i: "11-" + $31 } }),
-                  _c("Card", { attrs: { _i: "12-" + $31 } }),
-                  _c("Brand", { attrs: { _i: "13-" + $31 } }),
-                  _c("Card", { attrs: { _i: "14-" + $31 } }),
-                  _c("Shop", { attrs: { _i: "15-" + $31 } }),
-                  _c("Card", { attrs: { _i: "16-" + $31 } }),
-                  _c("Hot", { attrs: { _i: "17-" + $31 } }),
-                  _c("Card", { attrs: { _i: "18-" + $31 } }),
-                  _c("CommodityList", { attrs: { _i: "19-" + $31 } }),
+                  _vm._l(
+                    _vm._$g(10 + "-" + $31, "f"),
+                    function (key, i, $22, $32) {
+                      return [
+                        _vm._$g("11-" + $31 + "-" + $32, "i")
+                          ? _c("IndexSwiper", {
+                              key: key["k0"],
+                              attrs: { _i: "11-" + $31 + "-" + $32 },
+                            })
+                          : _vm._e(),
+                        _vm._$g("12-" + $31 + "-" + $32, "i")
+                          ? [
+                              _c("Recommend", {
+                                attrs: { _i: "13-" + $31 + "-" + $32 },
+                              }),
+                              _c("Card", {
+                                attrs: { _i: "14-" + $31 + "-" + $32 },
+                              }),
+                            ]
+                          : _vm._e(),
+                        _vm._$g("15-" + $31 + "-" + $32, "i")
+                          ? _c("CommodityList", {
+                              key: key["k2"],
+                              attrs: { _i: "15-" + $31 + "-" + $32 },
+                            })
+                          : _vm._e(),
+                      ]
+                    }
+                  ),
                 ],
-                1
+                2
               ),
             ],
             1
@@ -548,66 +567,35 @@ var render = function () {
             _i: 1,
           },
         },
-        [
-          _c(
+        _vm._l(_vm._$g(2, "f"), function (item, index, $20, $30) {
+          return _c(
             "v-uni-swiper-item",
-            { attrs: { _i: 2 } },
+            { key: item, attrs: { _i: "2-" + $30 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
+                {
+                  staticClass: _vm._$g("3-" + $30, "sc"),
+                  attrs: { _i: "3-" + $30 },
+                },
                 [
-                  _c("v-uni-image", {
-                    staticClass: _vm._$g(4, "sc"),
-                    attrs: {
-                      src: "/static/swiper/swiper1.png",
-                      mode: "",
-                      _i: 4,
-                    },
-                  }),
+                  _vm._$g("4-" + $30, "i")
+                    ? _c("v-uni-image", {
+                        staticClass: _vm._$g("4-" + $30, "sc"),
+                        attrs: {
+                          src: _vm._$g("4-" + $30, "a-src"),
+                          mode: "",
+                          _i: "4-" + $30,
+                        },
+                      })
+                    : _vm._e(),
                 ],
                 1
               ),
             ],
             1
-          ),
-          _c(
-            "v-uni-swiper-item",
-            { attrs: { _i: 5 } },
-            [
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-                [
-                  _c("v-uni-image", {
-                    staticClass: _vm._$g(7, "sc"),
-                    attrs: { src: "/static/swiper/swiper2.png", _i: 7 },
-                  }),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-          _c(
-            "v-uni-swiper-item",
-            { attrs: { _i: 8 } },
-            [
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
-                [
-                  _c("v-uni-image", {
-                    staticClass: _vm._$g(10, "sc"),
-                    attrs: { src: "/static/swiper/swiper3.png", _i: 10 },
-                  }),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-        ],
+          )
+        }),
         1
       ),
     ],
@@ -651,6 +639,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
+  props: ["dataList"],
   data: function data() {
     return {
       wxsProps: {}
@@ -1462,6 +1451,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
+  props: ["dataList"],
   data: function data() {
     return {
       wxsProps: {}
@@ -1847,6 +1837,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _Commodity = _interopRequireDefault(__webpack_require__(/*! ./Commodity.vue */ 41));
 var _default = {
+  props: ["dataList"],
   data: function data() {
     return {
       wxsProps: {}
@@ -2728,6 +2719,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _Commodity = _interopRequireDefault(__webpack_require__(/*! ./Commodity.vue */ 41));
 var _default = {
+  props: ["dataList"],
   data: function data() {
     return {
       wxsProps: {}
