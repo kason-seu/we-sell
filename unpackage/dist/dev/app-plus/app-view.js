@@ -343,10 +343,10 @@ var render = function () {
             { key: item, attrs: { _i: "8-" + $31 } },
             [
               _c(
-                "uni-view",
+                "v-uni-scroll-view",
                 {
-                  staticClass: _vm._$g("9-" + $31, "sc"),
-                  attrs: { _i: "9-" + $31 },
+                  style: _vm._$g("9-" + $31, "s"),
+                  attrs: { "scroll-y": "true", _i: "9-" + $31 },
                 },
                 [
                   _vm._l(
