@@ -267,50 +267,60 @@ var render = function () {
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
       _c(
-        "v-uni-scroll-view",
-        {
-          staticClass: _vm._$g(1, "sc"),
-          attrs: {
-            "scroll-x": "true",
-            "scroll-into-view": _vm._$g(1, "a-scroll-into-view"),
-            _i: 1,
-          },
-        },
+        "uni-view",
+        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
         [
           _c(
-            "uni-view",
-            { attrs: { _i: 2 } },
-            _vm._l(_vm._$g(3, "f"), function (item, index, $20, $30) {
-              return _c(
+            "v-uni-scroll-view",
+            {
+              staticClass: _vm._$g(2, "sc"),
+              attrs: {
+                "scroll-x": "true",
+                "scroll-into-view": _vm._$g(2, "a-scroll-into-view"),
+                _i: 2,
+              },
+            },
+            [
+              _c(
                 "uni-view",
-                {
-                  key: item,
-                  staticClass: _vm._$g("3-" + $30, "sc"),
-                  attrs: { id: _vm._$g("3-" + $30, "a-id"), _i: "3-" + $30 },
-                  on: {
-                    click: function ($event) {
-                      return _vm.$handleViewEvent($event)
-                    },
-                  },
-                },
-                [
-                  _c(
+                { attrs: { _i: 3 } },
+                _vm._l(_vm._$g(4, "f"), function (item, index, $20, $30) {
+                  return _c(
                     "uni-view",
                     {
-                      class: _vm._$g("4-" + $30, "c"),
-                      attrs: { _i: "4-" + $30 },
+                      key: item,
+                      staticClass: _vm._$g("4-" + $30, "sc"),
+                      attrs: {
+                        id: _vm._$g("4-" + $30, "a-id"),
+                        _i: "4-" + $30,
+                      },
+                      on: {
+                        click: function ($event) {
+                          return _vm.$handleViewEvent($event)
+                        },
+                      },
                     },
                     [
-                      _c("v-uni-text", { attrs: { _i: "5-" + $30 } }, [
-                        _vm._v(_vm._$g("5-" + $30, "t0-0")),
-                      ]),
+                      _c(
+                        "uni-view",
+                        {
+                          class: _vm._$g("5-" + $30, "c"),
+                          attrs: { _i: "5-" + $30 },
+                        },
+                        [
+                          _c("v-uni-text", { attrs: { _i: "6-" + $30 } }, [
+                            _vm._v(_vm._$g("6-" + $30, "t0-0")),
+                          ]),
+                        ],
+                        1
+                      ),
                     ],
                     1
-                  ),
-                ],
+                  )
+                }),
                 1
-              )
-            }),
+              ),
+            ],
             1
           ),
         ],
@@ -319,36 +329,36 @@ var render = function () {
       _c(
         "v-uni-swiper",
         {
-          style: _vm._$g(6, "s"),
-          attrs: { current: _vm._$g(6, "a-current"), _i: 6 },
+          style: _vm._$g(7, "s"),
+          attrs: { current: _vm._$g(7, "a-current"), _i: 7 },
           on: {
             change: function ($event) {
               return _vm.$handleViewEvent($event)
             },
           },
         },
-        _vm._l(_vm._$g(7, "f"), function (item, index, $21, $31) {
+        _vm._l(_vm._$g(8, "f"), function (item, index, $21, $31) {
           return _c(
             "v-uni-swiper-item",
-            { key: item, attrs: { _i: "7-" + $31 } },
+            { key: item, attrs: { _i: "8-" + $31 } },
             [
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g("8-" + $31, "sc"),
-                  attrs: { _i: "8-" + $31 },
+                  staticClass: _vm._$g("9-" + $31, "sc"),
+                  attrs: { _i: "9-" + $31 },
                 },
                 [
-                  _c("Banner", { attrs: { _i: "9-" + $31 } }),
-                  _c("Icons", { attrs: { _i: "10-" + $31 } }),
-                  _c("Card", { attrs: { _i: "11-" + $31 } }),
-                  _c("Brand", { attrs: { _i: "12-" + $31 } }),
-                  _c("Card", { attrs: { _i: "13-" + $31 } }),
-                  _c("Shop", { attrs: { _i: "14-" + $31 } }),
-                  _c("Card", { attrs: { _i: "15-" + $31 } }),
-                  _c("Hot", { attrs: { _i: "16-" + $31 } }),
-                  _c("Card", { attrs: { _i: "17-" + $31 } }),
-                  _c("CommodityList", { attrs: { _i: "18-" + $31 } }),
+                  _c("Banner", { attrs: { _i: "10-" + $31 } }),
+                  _c("Icons", { attrs: { _i: "11-" + $31 } }),
+                  _c("Card", { attrs: { _i: "12-" + $31 } }),
+                  _c("Brand", { attrs: { _i: "13-" + $31 } }),
+                  _c("Card", { attrs: { _i: "14-" + $31 } }),
+                  _c("Shop", { attrs: { _i: "15-" + $31 } }),
+                  _c("Card", { attrs: { _i: "16-" + $31 } }),
+                  _c("Hot", { attrs: { _i: "17-" + $31 } }),
+                  _c("Card", { attrs: { _i: "18-" + $31 } }),
+                  _c("CommodityList", { attrs: { _i: "19-" + $31 } }),
                 ],
                 1
               ),
@@ -2156,7 +2166,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 16);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.wx-tab {\n\theight: 200rpx;\n\twidth: 100%;\n\ttext-align: center;\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tline-height: 150rpx;\n}\n\n\n\n/* .content {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n} */\n.scroll-home {\n\twidth: 100%;\n\theight: 80rpx;\n\twhite-space: nowrap;\n\tpadding: 2rpx;\n}\n.scroll-item {\n\tdisplay: inline-block;\n\tpadding: 2rpx 24rpx;\n\n\tfont-size: 36rpx;\n\tfont-weight: bold;\n}\n.item-text {\n\tborder-bottom: 6rpx solid #42B7FB;\n}\n", ""]);
+exports.push([module.i, "\n.wx-tab {\n\theight: 200rpx;\n\twidth: 100%;\n\ttext-align: center;\n\tdisplay: flex;\n\tjustify-content: space-between;\n\tline-height: 150rpx;\n}\n.sticky-box {\n\n\tdisplay: flex;\n\tposition: -webkit-sticky;\n\n\tposition: sticky;\n\ttop: var(--window-top);\n\tz-index: 99;\n\tflex-direction: row;\n\tmargin: 0px;\n\tborder-top: 1px #f9f9f9 solid;\n\tborder-bottom: 1px #f9f9f9 solid;\n\tbackground: #fff;\n}\n\n/* .content {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n} */\n.scroll-home {\n\twidth: 100%;\n\theight: 80rpx;\n\twhite-space: nowrap;\n\tpadding: 2rpx;\n}\n.scroll-item {\n\tdisplay: inline-block;\n\tpadding: 2rpx 24rpx;\n\n\tfont-size: 36rpx;\n\tfont-weight: bold;\n}\n.item-text {\n\tborder-bottom: 6rpx solid #42B7FB;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

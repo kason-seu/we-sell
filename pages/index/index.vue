@@ -32,22 +32,22 @@
 		<Card cardTitle="猜你喜欢"></Card>
 		<CommodityList></CommodityList>
 		-->
+		<view class="sticky-box">
+			<!-- 滑动页面-->
+			<scroll-view scroll-x="true" class="scroll-home" :scroll-into-view="tabScrollIndex">
 
-		<!-- 滑动页面-->
-		<scroll-view scroll-x="true" class="scroll-home" :scroll-into-view="tabScrollIndex">
+				<view>
+					<view class="scroll-item" v-for="(item,index) in tabBarItemList" :key="index" :id='"tap" + index'
+						@tap="tapClick(index)">
 
-			<view>
-				<view class="scroll-item" v-for="(item,index) in tabBarItemList" :key="index" :id='"tap" + index'
-					@tap="tapClick(index)">
-
-					<view :class="tabBarIndex===index ? 'item-text' : 'f-color' ">
-						<text>{{item.name}}</text>
+						<view :class="tabBarIndex===index ? 'item-text' : 'f-color' ">
+							<text>{{item.name}}</text>
+						</view>
 					</view>
 				</view>
-			</view>
 
-		</scroll-view>
-
+			</scroll-view>
+		</view>
 		<swiper @change="changeTab" :current="tabBarIndex" :style="'height:'+ homeHeight +'px;'">
 			<swiper-item v-for="(item,index) in tabBarItemList" :key="index">
 				<view class="home-data">
@@ -66,6 +66,7 @@
 
 		</swiper>
 	</view>
+
 </template>
 
 <script>
@@ -169,7 +170,20 @@
 		line-height: 150rpx;
 	}
 
-
+	.sticky-box {
+		/* #ifndef APP-PLUS-NVUE */
+		display: flex;
+		position: -webkit-sticky;
+		/* #endif */
+		position: sticky;
+		top: var(--window-top);
+		z-index: 99;
+		flex-direction: row;
+		margin: 0px;
+		border-top: 1px #f9f9f9 solid;
+		border-bottom: 1px #f9f9f9 solid;
+		background: #fff;
+	}
 
 	/* .content {
 		display: flex;
