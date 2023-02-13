@@ -52,16 +52,21 @@
 			<swiper-item v-for="(item,index) in newTabPageList" :key="index">
 
 				<scroll-view scroll-y="true" :style="'height:'+ homeHeight +'px;'">
-					<block v-for="(key,i) in item.data" :key="i">
+					<block v-if="item.data.length > 0">
+						<block v-for="(key,i) in item.data" :key="i">
 
-						<IndexSwiper v-if="key.type === 'swiperList'" :dataList="key.data"></IndexSwiper>
-						<template v-if="key.type === 'recommendList'">
-							<Recommend :dataList="key.data"></Recommend>
-							<Card cardTitle="猜你喜欢"></Card>
-						</template>
+							<IndexSwiper v-if="key.type === 'swiperList'" :dataList="key.data"></IndexSwiper>
+							<template v-if="key.type === 'recommendList'">
+								<Recommend :dataList="key.data"></Recommend>
+								<Card cardTitle="猜你喜欢"></Card>
+							</template>
 
-						<CommodityList v-if="key.type === 'commodityList'" :dataList="key.data"></CommodityList>
+							<CommodityList v-if="key.type === 'commodityList'" :dataList="key.data"></CommodityList>
+						</block>
 					</block>
+					<view v-else>
+						暂无数据....
+					</view>
 				</scroll-view>
 
 				<!--下面这种方式不太好执行刷新 block 這東西是個空白沒有啥作用，不是試圖-->
@@ -173,7 +178,7 @@
 			uni.getSystemInfo({
 				success: (res) => {
 					console.log(res.appName)
-					const windowHeight = res.windowHeight
+					const windowHeight = res.screenHeight
 					console.log('可使用屏幕高度 ' + windowHeight)
 
 					// 计算菜单栏的高度，将rpx转化为px
@@ -196,22 +201,35 @@
 						//console.log(JSON.stringify(res.data.data))
 						this.newTabPageList = this.initNewTabPageList(res.data.data)
 						//console.log('newresult ' + JSON.stringify(this.newTabPageList))
-					}
+					},
+
 				})
 
 			},
-			getClientHeight() {
+			getClientHeight: () => {
+				const screen = plus.navigator.hasNotchInScreen()
+				console.log("是否刘海屏 " + screen)
 				let res = uni.getSystemInfoSync()
 				const statusBarHeight = res.statusBarHeight
 				const osName = res.osName
 				console.log('osName' + osName)
 				if (osName === 'ios') {
-					return 44 + statusBarHeight
+					if (screen) {
+						return 40 + statusBarHeight
+					} else {
+						return statusBarHeight
+					}
+
 				} else if (osName == 'android') {
-					return 48 + statusBarHeight
+					if (screen) {
+						return 40 + statusBarHeight
+					} else {
+						return statusBarHeight
+					}
 				} else {
 					return 0
 				}
+				return liuhanHeight + statusBarHeight
 			},
 			initNewTabPageList(res) {
 

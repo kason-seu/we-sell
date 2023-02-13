@@ -51,7 +51,7 @@
 		<swiper @change="changeTab" :current="tabBarIndex" :style="'height:'+ homeHeight +'px;'">
 			<swiper-item v-for="(item,index) in newTabPageList" :key="index">
 
-				<!-- <scroll-view scroll-y="true" :style="'height:'+ homeHeight +'px;'">
+				<scroll-view scroll-y="true" :style="'height:'+ homeHeight +'px;'">
 					<block v-for="(key,i) in item.data" :key="i">
 
 						<IndexSwiper v-if="key.type === 'swiperList'" :dataList="key.data"></IndexSwiper>
@@ -62,10 +62,10 @@
 
 						<CommodityList v-if="key.type === 'commodityList'" :dataList="key.data"></CommodityList>
 					</block>
-				</scroll-view> -->
+				</scroll-view>
 
 				<!--下面这种方式不太好执行刷新 block 這東西是個空白沒有啥作用，不是試圖-->
-				<view class="home-data">
+				<!-- <view class="home-data">
 
 
 
@@ -79,7 +79,7 @@
 
 						<CommodityList v-if="key.type === 'commodityList'" :dataList="key.data"></CommodityList>
 					</block>
-				</view>
+				</view> -->
 
 			</swiper-item>
 
@@ -107,7 +107,7 @@
 				// 滑动的位置
 				tabScrollIndex: 'tap0',
 				// home视图高度，显示真正的内容板块
-				homeHeight: 2000,
+				homeHeight: 0,
 
 				// 改造从接口中读取， tabBar显示的菜单内容
 				tabBarItemList: [],
@@ -163,27 +163,27 @@
 		onReady() {
 			// 下面这段代码如果是动态通过接口获取view内容的话，就不生效了。会提示高度为空
 			// 因为使用 uni.createSelectorQuery() 需要在生命周期 mounted（onReady) 后进行调用
-			let view = uni.createSelectorQuery().select('.home-data')
-			view.boundingClientRect(data => {
-				console.log('页面布局信息 ' + JSON.stringify(data))
-				//this.homeHeight = data.height
-				this.homeHeight = 5000;
-			}).exec()
+			// let view = uni.createSelectorQuery().select('.home-data')
+			// view.boundingClientRect(data => {
+			// 	console.log('页面布局信息 ' + JSON.stringify(data))
+			// 	//this.homeHeight = data.height
+			// 	this.homeHeight = 5000;
+			// }).exec()
 
-			// uni.getSystemInfo({
-			// 	success: (res) => {
-			// 		console.log(res.appName)
-			// 		const windowHeight = res.windowHeight
-			// 		console.log('可使用屏幕高度 ' + windowHeight)
+			uni.getSystemInfo({
+				success: (res) => {
+					console.log(res.appName)
+					const windowHeight = res.screenHeight
+					console.log('可使用屏幕高度 ' + windowHeight)
 
-			// 		// 计算菜单栏的高度，将rpx转化为px
-			// 		const scrollHeight = uni.upx2px(80)
+					// 计算菜单栏的高度，将rpx转化为px
+					const scrollHeight = uni.upx2px(80)
 
-			// 		this.homeHeight = windowHeight - scrollHeight - this.getClientHeight()
-			// 		console.log("homeHeight = " + this.homeHeight)
-			// 		this.homeHeight = 2000
-			// 	}
-			// })
+					this.homeHeight = windowHeight - scrollHeight - this.getClientHeight()
+					console.log("homeHeight = " + this.homeHeight)
+
+				}
+			})
 
 		},
 		methods: {
@@ -196,19 +196,20 @@
 						//console.log(JSON.stringify(res.data.data))
 						this.newTabPageList = this.initNewTabPageList(res.data.data)
 						//console.log('newresult ' + JSON.stringify(this.newTabPageList))
-					}
+					},
+
 				})
 
 			},
-			getClientHeight() {
+			getClientHeight: () => {
 				let res = uni.getSystemInfoSync()
 				const statusBarHeight = res.statusBarHeight
 				const osName = res.osName
 				console.log('osName' + osName)
 				if (osName === 'ios') {
-					return 44 + statusBarHeight
+					return statusBarHeight
 				} else if (osName == 'android') {
-					return 48 + statusBarHeight
+					return statusBarHeight
 				} else {
 					return 0
 				}
